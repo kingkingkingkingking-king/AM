@@ -5,7 +5,7 @@ llm_brain.py — Local LLM interface via llama-cpp-python.
 import os
 from typing import Generator
 
-from config import (
+from am.core.config import (
     LLM_MODEL_PATH,
     LLM_N_CTX,
     LLM_N_THREADS,

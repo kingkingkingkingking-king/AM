@@ -3,7 +3,7 @@ web_launcher.py — Opens websites based on keywords in a voice command.
 """
 
 import webbrowser
-from config import COMMON_SITES
+from am.core.config import COMMON_SITES
 
 
 def open_website(command: str) -> tuple[bool, str]:

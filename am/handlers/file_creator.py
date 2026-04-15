@@ -5,7 +5,7 @@ file_creator.py — Creates empty files from voice commands.
 import os
 import re
 
-from config import FILE_BASE_DIRECTORY
+from am.core.config import FILE_BASE_DIRECTORY
 
 
 SUPPORTED_EXTENSIONS: dict[str, str] = {

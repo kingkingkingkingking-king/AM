@@ -18,7 +18,7 @@ import os
 import re
 from datetime import datetime
 
-from config import MEMORY_FILE
+from am.core.config import MEMORY_FILE
 
 
 class Memory:

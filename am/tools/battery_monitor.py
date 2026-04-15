@@ -8,8 +8,8 @@ import time
 import psutil
 from plyer import notification
 
-from tts import TextToSpeech
-from config import (
+from am.audio.tts import TextToSpeech
+from am.core.config import (
     BATTERY_CHECK_INTERVAL,
     BATTERY_LOW_THRESHOLD,
     BATTERY_FULL_THRESHOLD,

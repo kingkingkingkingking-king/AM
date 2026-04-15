@@ -8,8 +8,8 @@ import threading
 import time
 from datetime import datetime
 
-from tts import TextToSpeech
-from config import SCHEDULE_FILE, SCHEDULE_CHECK_INTERVAL
+from am.audio.tts import TextToSpeech
+from am.core.config import SCHEDULE_FILE, SCHEDULE_CHECK_INTERVAL
 
 
 class TaskScheduler:

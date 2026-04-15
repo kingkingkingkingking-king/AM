@@ -11,14 +11,14 @@ import subprocess
 import pyautogui
 from datetime import datetime
 
-from web_launcher import open_website
-from app_launcher import open_desktop_app
-from browser_automation import BrowserAutomation
-from file_creator import FileCreator
-from hardware_monitor import HardwareMonitor
-from speed_test_tool import SpeedTestTool
-from task_scheduler import TaskScheduler
-from memory import Memory
+from am.handlers.web_launcher import open_website
+from am.handlers.app_launcher import open_desktop_app
+from am.handlers.browser_automation import BrowserAutomation
+from am.handlers.file_creator import FileCreator
+from am.tools.hardware_monitor import HardwareMonitor
+from am.tools.speed_test_tool import SpeedTestTool
+from am.tools.task_scheduler import TaskScheduler
+from am.core.memory import Memory
 
 
 class AutomationBrain:
@@ -84,7 +84,7 @@ class AutomationBrain:
         # Website vs desktop app
         open_triggers = ("open", "go to", "launch", "start")
         if any(t in cmd for t in open_triggers):
-            from config import COMMON_SITES, COMMON_APPS
+            from am.core.config import COMMON_SITES, COMMON_APPS
             if any(site in cmd for site in COMMON_SITES):
                 return "website"
             if any(app in cmd for app in COMMON_APPS):
@@ -211,7 +211,7 @@ class AutomationBrain:
 
 # ── Quick test ────────────────────────────────────────────────────────────────
 if __name__ == "__main__":
-    from task_scheduler import TaskScheduler
+    from am.tools.task_scheduler import TaskScheduler
 
     sched = TaskScheduler()
     brain = AutomationBrain(scheduler=sched)

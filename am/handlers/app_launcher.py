@@ -6,7 +6,7 @@ import subprocess
 import time
 import pyautogui
 
-from config import COMMON_APPS
+from am.core.config import COMMON_APPS
 
 
 def open_desktop_app(command: str) -> tuple[bool, str]:

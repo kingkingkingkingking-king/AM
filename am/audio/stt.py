@@ -4,7 +4,7 @@ stt.py — Speech-to-Text using Google Speech Recognition.
 
 import speech_recognition as sr
 
-from config import (
+from am.core.config import (
     STT_ENERGY_THRESHOLD,
     STT_PAUSE_THRESHOLD,
     STT_LISTEN_TIMEOUT,

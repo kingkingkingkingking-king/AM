@@ -4,7 +4,7 @@ a natural spoken summary for Jarvis to read on startup.
 """
 
 import requests
-from config import WEATHER_API_KEY, WEATHER_CITY, WEATHER_UNITS
+from am.core.config import WEATHER_API_KEY, WEATHER_CITY, WEATHER_UNITS
 
 
 def get_weather_report() -> str:

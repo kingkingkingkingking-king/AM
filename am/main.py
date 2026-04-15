@@ -14,16 +14,16 @@ import time
 import random
 from datetime import datetime
 
-from stt import SpeechToText
-from tts import TextToSpeech
-from automation_brain import AutomationBrain
-from battery_monitor import BatteryMonitor
-from llm_brain import LLMBrain
-from task_scheduler import TaskScheduler
-from weather import get_weather_report
-from sounds import play_boot, play_wake, play_thinking, play_shutdown
-from memory import Memory
-from config import WAKE_WORD
+from am.audio.stt import SpeechToText
+from am.audio.tts import TextToSpeech
+from am.core.brain import AutomationBrain
+from am.tools.battery_monitor import BatteryMonitor
+from am.core.llm import LLMBrain
+from am.tools.task_scheduler import TaskScheduler
+from am.tools.weather import get_weather_report
+from am.audio.sounds import play_boot, play_wake, play_thinking, play_shutdown
+from am.core.memory import Memory
+from am.core.config import WAKE_WORD
 
 
 # ── Phrase banks ──────────────────────────────────────────────────────────────
@@ -138,7 +138,7 @@ class AM:
         self.brain = AutomationBrain(scheduler=self.scheduler)
 
         # LLM — loaded separately so a missing model doesn't crash everything
-        self.llm: LLMBrain | None = None
+        self.llm: "LLMBrain | None" = None
         try:
             self.llm = LLMBrain()
         except FileNotFoundError as e:
